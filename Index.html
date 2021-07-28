@@ -12,15 +12,19 @@
 </head>
 
 <body style="padding: 20px; width:800px;">
-    <h1>How to use git</h1>
-    <h2>Step 1 - Download github</h2>
-    <p>The first step of using git is to set up a github account, this can be done by following <a href="https://github.com/" target="_blank" rel="noopener noreferrer">this link </a><img src="github-image.png" alt="the github logo" height="20px"; width="20px";></p>
-    <p style="color:red"> &emsp;&emsp;<sub>Github is not actually part of git, but it is a very useful user interface for interacting with it</sub></p>
-
+    <h1>What is Git?</h1>
+    <p>Git is the most commonly used version control system. Git tracks the changes you make to files, so you have a record of what has been done, and you can revert to specific versions should you ever need to. Git also makes collaboration easier, allowing changes by multiple people to all be merged into one source</p>
+    <br></br>
+    <h1>How to use Git</h1>
+    <h2>Step 1 - Download Github</h2>
+    <p>The first step of using git is to set up a Github account, this can be done by following <a href="https://github.com/" target="_blank" rel="noopener noreferrer">this link </a><img src="github-image.png" alt="the github logo" height="20px"; width="20px";></p>
+    <p style="color:red"> &emsp;&emsp;<sub>Github is not actually part of Git, GitHub is a cloud-based hosting service that lets you manage Git repositories
+    </sub></p>
+    <br></br>
     <h2>Step 2 - Download A Unix shell</h2>
     <p>For this document we will be using Git Bash, <a href="https://git-scm.com/downloads" target="_blank" rel="noopener noreferrer">found here</a></p>
     
-
+    <br></br>
     <h2>Step 3 - Using the command line</h2>
     <p>Here is breif description of how to move around files from the command line</p>
     <p>In order to know which file location you are currently in you can type</p>
@@ -59,26 +63,30 @@ VR@VR MINGW64 ~/Desktop/CodingCourse/Work/Project1 (html-code)</code></pre>
     <p style="color: red;"><b>However you must be extremely careful when using remove commands as unless you ask it to the remove command will just do what you say without asking you if you are sure. Therefore you should usually always ask the command to double check it is correct before it runs. you do this by adding "-i" to the command which stands for "interactive" which asks for every deletion to be confirmed.</b></p>
     <pre><code>rm -i {FileName}.{extention}</code></pre>
     <p>If you want to learn more about what the command line can do follow <a href="https://www.codecademy.com/learn/learn-the-command-line" target="_blank" rel="noopener noreferrer">this link </a> for a course on it.</p>
-
-
+    <br></br>
     <h2>Step 4 - Create a repository</h2>
     <p>I have found it better to do this from the command line rather than within github.</p>
     <p>To do this you will need to initiate git using the following command</p>
     <pre><code>git init</code></pre>
     <p>This will have created a repository within the current folder you are in.</p> 
-    
-    <h2>Step 4 - What actually is git?</h2>
     <p></p>Next we want to create a file within the folder that we are in.</p>
     <pre><code>touch Readme.md</code></pre>
     <p>We then want to add this file to git, so that git will try to follow any changes made to it.</p>
     <pre><code>git add Readme.MD</code></pre>
+
     <p>Now we want to commit this addition to our repository. We do this using the git commit command, and we want to provide this command a message so that within git version control we get some information on what the changes that are occuring are. This is the "-m" addition to the command.</p>
     <pre><code>git commit -m "creation of readme.md"</code></pre>
-    <p></p>
+    <p>Next we want to be able to link the repository that we have created to your Github account.</p>
+    <p>In order to do this we actually first need to make a repository on Github's site so that the repo exists in both locations, then we can link them together</p>
+    <p> Following <a href="https://github.com/new" target="_blank" rel="noopener noreferrer">this link </a>will open the page to create the repository on Github</p>
+    <p>You will want to call the repository a simple small name so it is easier to work with, as you made need to type it out quite a few tiems.</p>
+    <p>For this example we will call our repository "Project1", you can add a description of what the repository will be used for and you can chose to set the respository to be public or private. After this you do not want to select any of the initialize this repository options, and just select create repository</p>
+    <pre><code>git remote add origin {repository url}</code></pre>
+    <pre><code>git remote add origin https://github.com/{your username}/{your project name}</code></pre>
     <p> </p>
     <p> </p>
     <p> </p>
-    <p> </p>
+    <p> </p> 
     <p> </p>
     <p> </p>
     <p> </p>
@@ -87,22 +95,29 @@ VR@VR MINGW64 ~/Desktop/CodingCourse/Work/Project1 (html-code)</code></pre>
 
 
 
-    Actual process of what i do to interact with git, 
-
-
-    git add git-website.html
-        - add files to git that i want to commit
-    git commit -m "a message detailing what i have done"
-        - send the commit with the details of what i have done
-    git push origin html-code
-        - push this to the remote repo (origin) under the branch name?
-    git status
-        - to check everything is correct
-
-    {Things i am going to do after writing these sentences}
-        save this file
-        Then do git status again to see the difference
-    
-    Then push all of these changes up to github in order to save this work.
 
 </body>
+
+
+<!-- 
+<p>It is also possible to add any files in the current directory you are within by passing git add a fullstop only, as shown below.</p>
+<pre><code>git add .</code></pre> -->
+
+<!-- Actual process of what i do to interact with git, 
+
+
+git add git-website.html
+    - add files to git that i want to commit
+git commit -m "a message detailing what i have done"
+    - send the commit with the details of what i have done
+git push origin html-code
+    - push this to the remote repo (origin) under the branch name?
+git status
+    - to check everything is correct
+
+{Things i am going to do after writing these sentences}
+    save this file
+    Then do git status again to see the difference
+
+Then push all of these changes up to github in order to save this work.
+ -->
