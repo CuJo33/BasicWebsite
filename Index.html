@@ -1,0 +1,123 @@
+<!Doctype html>
+<head>
+    <title>How to use git</title>
+    <style>
+        pre code {
+            background-color: #eee;
+            border: 1px solid #999;
+            display: block;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body style="padding: 20px; width:800px;">
+    <h1>What is Git?</h1>
+    <p>Git is the most commonly used version control system. Git tracks the changes you make to files, so you have a record of what has been done, and you can revert to specific versions should you ever need to. Git also makes collaboration easier, allowing changes by multiple people to all be merged into one source</p>
+    <br></br>
+    <h1>How to use Git</h1>
+    <h2>Step 1 - Download Github</h2>
+    <p>The first step of using git is to set up a Github account, this can be done by following <a href="https://github.com/" target="_blank" rel="noopener noreferrer">this link </a><img src="github-image.png" alt="the github logo" height="20px"; width="20px";></p>
+    <p style="color:red"> &emsp;&emsp;<sub>Github is not actually part of Git, GitHub is a cloud-based hosting service that lets you manage Git repositories
+    </sub></p>
+    <br></br>
+    <h2>Step 2 - Download A Unix shell</h2>
+    <p>For this document we will be using Git Bash, <a href="https://git-scm.com/downloads" target="_blank" rel="noopener noreferrer">found here</a></p>
+    
+    <br></br>
+    <h2>Step 3 - Using the command line</h2>
+    <p>Here is breif description of how to move around files from the command line</p>
+    <p>In order to know which file location you are currently in you can type</p>
+    <pre><code>pwd</code></pre>
+    <p>This stands for Print Working directory, and will return something along the lines of</p>
+    <pre><code>/c/Users/VR/</code></pre>
+    <p>You are most likely in the folder of the username that you logged into your computer with ( in this case "VR"). To be able to move through the directories we can use a command called change directory which is a simple command where you supply command with a variable of where you want to go. The command is very simple</p>
+    <pre><code>cd</code></pre>
+    <p>cd for Change Directory</p>
+    <p>Now we want to provide it with a path to follow</p>
+    <pre><code>cd {FolderName}</code></pre>
+    <pre><code>cd Desktop</code></pre>
+    <p>This will now have changed the working directory to be your desktop, again to test this you can use the print working directory command and it should return</p>
+    <pre><code>/c/Users/VR/Desktop/</code></pre>
+    <p>When typing these commands you are able to type cd then for instance the first D of Desktop and hit TAB. This will auto complete the word if there is only 1 file or folder with that beginning character. If there are more than 1 result then the program will be unable to complete that task as it can't be sure which file or folder to provide. In this instance you are able to hit TAB twice and then it will return all of the results which fit the parameter as shown below</p>
+    <pre><code>$ cd D
+Desktop/          Documents/        Downloads/</code></pre>
+    <p>So to be able to navigate through folders quickly you can use the auto complete function if you know your file structures very well</p>
+    <p>Currently this only tells you how to move down into a folder and not back out of a folder. In order to do this we can pass the change directory command a different parameter</p>
+    <pre><code>cd ..</code></pre>
+    <p>By providing the parameter .. we are asking to move out of the current folder that we are in, and move up a level in the hierarchy. It is possible to provide multiple requests to move up many folders at a time, these requests need to be seperated by forward slashes at each folder layer like so</p>
+    <pre><code>cd ../../..</code></pre>
+    <p>This will move up the hierarchy 3 levels.This can be seen below by looking at the working directory that is shown after "MINGW64" in the below code after the code has been run to move up and down the folder structure.</p>
+    <pre><code>VR@VR MINGW64 ~/Desktop/CodingCourse/Work/Project1 (html-code)
+    $ cd ../../..
+        
+VR@VR MINGW64 ~/Desktop
+    $ cd CodingCourse/Work/Project1/
+        
+VR@VR MINGW64 ~/Desktop/CodingCourse/Work/Project1 (html-code)</code></pre>
+    <p>We are also able to make a new directory (folder) using a command. To make a new directory the command to be used is mkdir followed by the name of the new directory</p>
+    <pre><code>mkdir {DirectoryName}</code></pre>
+    <p>You can also create files from the command line</p>
+    <pre><code>touch {FileName}.{extention}</code></pre>
+    <p>And remove files</p>
+    <p style="color: red;"><b>However you must be extremely careful when using remove commands as unless you ask it to the remove command will just do what you say without asking you if you are sure. Therefore you should usually always ask the command to double check it is correct before it runs. you do this by adding "-i" to the command which stands for "interactive" which asks for every deletion to be confirmed.</b></p>
+    <pre><code>rm -i {FileName}.{extention}</code></pre>
+    <p>If you want to learn more about what the command line can do follow <a href="https://www.codecademy.com/learn/learn-the-command-line" target="_blank" rel="noopener noreferrer">this link </a> for a course on it.</p>
+    <br></br>
+    <h2>Step 4 - Create a repository</h2>
+    <p>I have found it better to do this from the command line rather than within github.</p>
+    <p>To do this you will need to initiate git using the following command</p>
+    <pre><code>git init</code></pre>
+    <p>This will have created a repository within the current folder you are in.</p> 
+    <p></p>Next we want to create a file within the folder that we are in.</p>
+    <pre><code>touch Readme.md</code></pre>
+    <p>We then want to add this file to git, so that git will try to follow any changes made to it.</p>
+    <pre><code>git add Readme.MD</code></pre>
+
+    <p>Now we want to commit this addition to our repository. We do this using the git commit command, and we want to provide this command a message so that within git version control we get some information on what the changes that are occuring are. This is the "-m" addition to the command.</p>
+    <pre><code>git commit -m "creation of readme.md"</code></pre>
+    <p>Next we want to be able to link the repository that we have created to your Github account.</p>
+    <p>In order to do this we actually first need to make a repository on Github's site so that the repo exists in both locations, then we can link them together</p>
+    <p> Following <a href="https://github.com/new" target="_blank" rel="noopener noreferrer">this link </a>will open the page to create the repository on Github</p>
+    <p>You will want to call the repository a simple small name so it is easier to work with, as you made need to type it out quite a few tiems.</p>
+    <p>For this example we will call our repository "Project1", you can add a description of what the repository will be used for and you can chose to set the respository to be public or private. After this you do not want to select any of the initialize this repository options, and just select create repository</p>
+    <pre><code>git remote add origin {repository url}</code></pre>
+    <pre><code>git remote add origin https://github.com/{your username}/{your project name}</code></pre>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p> 
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+
+
+
+
+</body>
+
+
+<!-- 
+<p>It is also possible to add any files in the current directory you are within by passing git add a fullstop only, as shown below.</p>
+<pre><code>git add .</code></pre> -->
+
+<!-- Actual process of what i do to interact with git, 
+
+
+git add git-website.html
+    - add files to git that i want to commit
+git commit -m "a message detailing what i have done"
+    - send the commit with the details of what i have done
+git push origin html-code
+    - push this to the remote repo (origin) under the branch name?
+git status
+    - to check everything is correct
+
+{Things i am going to do after writing these sentences}
+    save this file
+    Then do git status again to see the difference
+
+Then push all of these changes up to github in order to save this work.
+ -->
